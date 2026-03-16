@@ -108,6 +108,6 @@ filter
 #> {
 #>     UseMethod("filter", x)
 #> }
-#> <bytecode: 0x55acecbab380>
+#> <bytecode: 0x55d9d0620960>
 #> <environment: namespace:rjd3filters>
 ```
