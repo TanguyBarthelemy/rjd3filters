@@ -102,7 +102,9 @@ Springer-Verlag.
 x <- retailsa$DrinkingPlaces
 coef <- lp_filter(6)
 confint <- confint_filter(x, coef)
+#> Error in c * 100: non-numeric argument to binary operator
 graphics::plot(confint, plot.type = "single",
      col = c("red", "black", "black"),
      lty = c(1, 2, 2))
+#> Error in object$coefficients: $ operator is invalid for atomic vectors
 ```

@@ -59,11 +59,13 @@
 
 
 <dt id="arg-coef">coef<a class="anchor" aria-label="anchor" href="#arg-coef"></a></dt>
-<dd><p>moving-average (<code><a href="moving_average.html">moving_average()</a></code>) or finite filter (<code><a href="finite_filters.html">finite_filters()</a></code>) used to filter the series.</p></dd>
+<dd><p>moving-average (<code><a href="moving_average.html">moving_average()</a></code>) or finite filter
+(<code><a href="finite_filters.html">finite_filters()</a></code>) used to filter the series.</p></dd>
 
 
 <dt id="arg-coef-var">coef_var<a class="anchor" aria-label="anchor" href="#arg-coef-var"></a></dt>
-<dd><p>moving-average (<code><a href="moving_average.html">moving_average()</a></code>) or finite filter (<code><a href="finite_filters.html">finite_filters()</a></code>) used compute the variance (throw <code><a href="var_estimator.html">var_estimator()</a></code>).
+<dd><p>moving-average (<code><a href="moving_average.html">moving_average()</a></code>) or finite filter
+(<code><a href="finite_filters.html">finite_filters()</a></code>) used compute the variance (throw <code><a href="var_estimator.html">var_estimator()</a></code>).
 By default equal to <code>coef</code>.</p></dd>
 
 
@@ -72,40 +74,51 @@ By default equal to <code>coef</code>.</p></dd>
 
 
 <dt id="arg-asymmetric-var">asymmetric_var<a class="anchor" aria-label="anchor" href="#arg-asymmetric-var"></a></dt>
-<dd><p>if <code>asymmetric_var = TRUE</code> then the variance is estimated for each asymmetric filters instead of using the variance associated the symmetric estimates.</p></dd>
+<dd><p>if <code>asymmetric_var = TRUE</code> then the variance is
+estimated for each asymmetric filters instead of using the variance
+associated the symmetric estimates.</p></dd>
 
 
 <dt id="arg-gaussian-distribution">gaussian_distribution<a class="anchor" aria-label="anchor" href="#arg-gaussian-distribution"></a></dt>
-<dd><p>if <code>TRUE</code> use the normal distribution to compute the confidence interval, otherwise use the t-distribution.</p></dd>
+<dd><p>if <code>TRUE</code> use the normal distribution to
+compute the confidence interval, otherwise use the t-distribution.</p></dd>
 
 
 <dt id="arg-exact-df">exact_df<a class="anchor" aria-label="anchor" href="#arg-exact-df"></a></dt>
-<dd><p>if <code>TRUE</code> compute the exact degrees of freedom for the t-distribution (when <code>gaussian_distribution = FALSE</code>), otherwise uses an approximation.</p></dd>
+<dd><p>if <code>TRUE</code> compute the exact degrees of freedom for the
+t-distribution (when <code>gaussian_distribution = FALSE</code>), otherwise uses an
+approximation.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>other arguments passed to the function <code><a href="moving_average.html">moving_average()</a></code> to convert <code>coef</code> to a <code>"moving_average"</code> object.</p></dd>
+<dd><p>other arguments passed to the function <code><a href="moving_average.html">moving_average()</a></code> to
+convert <code>coef</code> to a <code>"moving_average"</code> object.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Let \((\theta_i)_{-p\leq i \leq q}\) be a moving average of length \(p+q+1\) used
-to filter a time series \((y_i)_{1\leq i \leq n}\).
+    <p>Let \((\theta_i)_{-p\leq i \leq q}\) be a moving average of length
+\(p+q+1\) used to filter a time series \((y_i)_{1\leq i \leq n}\).
 Let denote \(\hat{\mu}_t\) the filtered series computed at time \(t\) as:
 $$
 \hat{\mu}_t = \sum_{i=-p}^q \theta_i y_{t+i}.
 $$
-If \(\hat{\mu}_t\) is unbiased, a approximate confidence for the true mean is:
+If \(\hat{\mu}_t\) is unbiased, a approximate confidence for the true mean
+is:
 $$
 \left[\hat{\mu}_t - z_{1-\alpha/2} \hat{\sigma} \sqrt{\sum_{i=-p}^q\theta_i^2};
 \hat{\mu}_t + z_{1-\alpha/2} \hat{\sigma} \sqrt{\sum_{i=-p}^q\theta_i^2}
 \right],
 $$
-where \(z_{1-\alpha/2}\) is the quantile \(1-\alpha/2\) of the standard normal distribution.</p>
-<p>The estimate of the variance \(\hat{\sigma}\) is obtained using <code><a href="var_estimator.html">var_estimator()</a></code> with the parameter <code>coef_var</code>.
-The assumption that \(\hat{\mu}_t\) is unbiased is rarely exactly true, so variance estimates and confidence intervals are usually computed at small bandwidths where bias is small.</p>
-<p>When <code>coef</code> (or <code>coef_var</code>) is a finite filter, the last points of the confidence interval are
-computed using the corresponding asymmetric filters</p>
+where \(z_{1-\alpha/2}\) is the quantile \(1-\alpha/2\) of the standard
+normal distribution.</p>
+<p>The estimate of the variance \(\hat{\sigma}\) is obtained using
+<code><a href="var_estimator.html">var_estimator()</a></code> with the parameter <code>coef_var</code>.
+The assumption that \(\hat{\mu}_t\) is unbiased is rarely exactly true, so
+variance estimates and confidence intervals are usually computed at small
+bandwidths where bias is small.</p>
+<p>When <code>coef</code> (or <code>coef_var</code>) is a finite filter, the last points of the
+confidence interval are computed using the corresponding asymmetric filters</p>
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
@@ -119,10 +132,11 @@ New York: Springer-Verlag.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">retailsa</span><span class="op">$</span><span class="va">DrinkingPlaces</span></span></span>
 <span class="r-in"><span><span class="va">coef</span> <span class="op">&lt;-</span> <span class="fu"><a href="lp_filter.html">lp_filter</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">confint</span> <span class="op">&lt;-</span> <span class="fu">confint_filter</span><span class="op">(</span><span class="va">x</span>, <span class="va">coef</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in c * 100:</span> non-numeric argument to binary operator</span>
 <span class="r-in"><span><span class="fu">graphics</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">confint</span>, plot.type <span class="op">=</span> <span class="st">"single"</span>,</span></span>
 <span class="r-in"><span>     col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"black"</span>, <span class="st">"black"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>     lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="confint_filter-1.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in object$coefficients:</span> $ operator is invalid for atomic vectors</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
