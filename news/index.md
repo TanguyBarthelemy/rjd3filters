@@ -14,7 +14,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - New method
   [`underlying_forecasts()`](https://rjdverse.github.io/rjd3filters/reference/underlying_forecasts.md).
-
 - New JARS related to version
   [3.7.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.7.1)
   of JDemetra+.
