@@ -5,7 +5,7 @@ A dataset containing monthly seasonally adjusted retailed sales
 ## Usage
 
 ``` r
-data(retailsa)
+retailsa
 ```
 
 ## Format
