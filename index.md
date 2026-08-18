@@ -98,7 +98,7 @@ legend("topleft", legend = c("y", "Musgrave", "FST", "RKHS"),
 ![](reference/figures/README-plot-global-1.png)
 
 The last estimates can also be analysed with the `implicit_forecasts`
-function that retreive the implicit forecasts corresponding to the
+function that retrieve the implicit forecasts corresponding to the
 asymmetric filters (i.e., the forecasts needed to have the same
 end-points estimates but using the symmetric filter).
 

@@ -23,7 +23,7 @@ impute_last_obs(x, n, nperiod = 1, backward = TRUE, forward = TRUE)
 
 - nperiod:
 
-  integer specifying how to imput missing date.
+  integer specifying how to impute missing date.
 
   - `nperiod = 1` means imputation using last filtered data (1 period
     backward),

@@ -46,7 +46,7 @@ show(object)
 
 - trailing_zero, leading_zero:
 
-  boolean indicating wheter to remove leading/trailing zero and NA.
+  boolean indicating whether to remove leading/trailing zero and NA.
 
 - s:
 

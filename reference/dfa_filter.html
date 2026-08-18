@@ -64,7 +64,7 @@
 
 <dt id="arg-density">density<a class="anchor" aria-label="anchor" href="#arg-density"></a></dt>
 <dd><p>hypothesis on the spectral density: <code>"uniform"</code>
-(= white woise, the default) or  <code>"rw"</code> (= random walk).</p></dd>
+(= white noise, the default) or  <code>"rw"</code> (= random walk).</p></dd>
 
 
 <dt id="arg-targetfilter">targetfilter<a class="anchor" aria-label="anchor" href="#arg-targetfilter"></a></dt>
@@ -92,7 +92,8 @@ The three criteria are:</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">dfa_filter</span><span class="op">(</span>horizon <span class="op">=</span> <span class="fl">6</span>, degree <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="fu">dfa_filter</span><span class="op">(</span>horizon <span class="op">=</span> <span class="fl">6</span>, degree <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             q=6          q=5           q=4         q=3         q=2         q=1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> t-6 -0.01934985 -0.030012305 -0.0408092039 -0.04068978 -0.03622977 -0.03672904</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> t-5 -0.02786378 -0.033359743 -0.0411977083 -0.04106306 -0.03072500 -0.01681858</span>
@@ -150,6 +151,7 @@ The three criteria are:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> t+4  0.00000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> t+5  0.00000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> t+6  0.00000000</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

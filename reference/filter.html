@@ -73,7 +73,7 @@ removed before filtering.</p></dd>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The functions <code>filter</code> extends <code><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></code> allowing to
 apply every kind of moving averages (symmetric and asymmetric filters) or to
-apply aset multiple moving averages to deal with the boundaries.</p>
+apply a set of multiple moving averages to deal with the boundaries.</p>
 <p>Let \(x_t\) be the input time series to filter.</p><ul><li><p>If <code>coef</code> is an object <code><a href="moving_average.html">moving_average()</a></code>, of length \(q\), the result
 \(y\) is equal at time \(t\) to:
 $$y[t] = x[t-lags] * coef[1] + x[t-lags+1] * coef[1] + ... + x[t-lags+q] * coef[q]$$.
@@ -100,7 +100,9 @@ point known)...</p></li>
 <span class="r-in"><span><span class="va">fst_ma</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">x</span>, <span class="va">fst_coef</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">lpp_ma</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">x</span>, <span class="va">lpp_coef</span><span class="op">[</span>,<span class="st">"q=2"</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">graphics</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/ts.union.html" class="external-link">ts.union</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">fst_ma</span>, <span class="va">lpp_ma</span><span class="op">)</span>, plot.type <span class="op">=</span> <span class="st">"single"</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">graphics</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/ts.union.html" class="external-link">ts.union</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">fst_ma</span>, <span class="va">lpp_ma</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>               plot.type <span class="op">=</span> <span class="st">"single"</span>,</span></span>
+<span class="r-in"><span>               col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="filter-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">trend</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">x</span>, <span class="va">lpp_coef</span><span class="op">)</span></span></span>
